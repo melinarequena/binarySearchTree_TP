@@ -40,7 +40,7 @@ Nodo *nuevo(string palabra) {
 
 void buscarPalabra(Nodo *raiz, string buscar) {
     if (!raiz) {
-        cout << "Arbol vacio, no se encuentra la palabra\n";
+        cout << "No se encuentra la palabra\n";
         return;
     }
     if (raiz->palabra == buscar) {
