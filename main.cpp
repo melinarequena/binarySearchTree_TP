@@ -18,21 +18,19 @@ void buscarPalabra(Nodo * raiz, string buscar);
 
 
 Nodo * insertar(Nodo *nodo, Nodo *raiz) {
-    if(!raiz){
+    if (!raiz) {
         return nodo;
     }
-    if(nodo->palabra > raiz->palabra){
-        nodo->nivel = raiz->nivel+1;
-        insertar(raiz->der, nodo);
-    }
+   nodo->nivel = raiz->nivel + 1;
+    if (nodo->palabra > raiz->palabra) {
+        raiz->der = insertar(nodo, raiz->der);
+    } else {
+        if (nodo->palabra < raiz->palabra) {
+            raiz->izq = insertar(nodo, raiz->izq);
+        }
 
-    if(nodo->palabra < raiz->palabra){
-        nodo->nivel = raiz->nivel+1;
-        insertar(raiz->izq, nodo);
     }
-
     return raiz;
-
 }
 
 Nodo *nuevo(string palabra) {
@@ -57,6 +55,7 @@ void buscarPalabra(Nodo *raiz, string buscar) {
         buscarPalabra(raiz->izq, buscar);
     }
 }
+
 int main() {
     Nodo * raiz = nullptr;
 
