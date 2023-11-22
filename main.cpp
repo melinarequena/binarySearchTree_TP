@@ -17,7 +17,7 @@ void buscarPalabra(Nodo * raiz, string buscar);
 
 
 
-Nodo * insertar(Nodo *nodo, Nodo *raiz) {
+Nodo * insertar(Nodo *nodo, Nodo *&raiz) {
     if (!raiz) {
         return nodo;
     }
