@@ -12,7 +12,7 @@ struct Nodo{
 };
 
 Nodo * nuevo(string palabra);
-Nodo * insertar(Nodo * nodo, Nodo *raiz);
+Nodo * insertar(Nodo * nodo, Nodo *&raiz);
 void buscarPalabra(Nodo * raiz, string buscar);
 
 
